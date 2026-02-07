@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentinelAI Console • Dashboard</title>
+    <script>
+      const savedTheme = localStorage.getItem("sentinel-theme");
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="console-body">
+    <div class="page-grid"></div>
+    <div class="wave-band"></div>
+    <div class="aurora"></div>
+    <div class="orb-field"></div>
+
+    <header class="console-header">
+      <a class="console-brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <div>
+          <p class="brand-name">SentinelAI</p>
+          <p class="brand-tagline">Safety Console</p>
+        </div>
+      </a>
+      <nav class="console-topnav">
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="logs.html">Risk Logs</a>
+        <a href="baselines.html">Baselines</a>
+        <a href="settings.html">Settings</a>
+        <a href="api-keys.html">API Keys</a>
+      </nav>
+      <div class="console-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          🌙
+        </button>
+        <button class="ghost">Investigate logs</button>
+        <button class="primary">Review baselines</button>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-title">Safety Console</div>
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="analyze.html">Analyze</a>
+        <a href="logs.html">Risk Logs</a>
+        <a href="baselines.html">Baselines</a>
+        <a href="settings.html">Settings</a>
+        <a href="api-keys.html">API Keys</a>
+      </aside>
+
+      <main class="console-main">
+        <section class="console-hero">
+          <div>
+            <h1>AI Risk Overview</h1>
+            <p>
+              SentinelAI continuously captures AI decisions in production so engineering teams can
+              audit safety, explain outcomes, and investigate risk quickly.
+            </p>
+            <div class="hero-status">Needs attention</div>
+          </div>
+          <div class="hero-badges">
+            <div class="badge-card">
+              <p>Risk posture</p>
+              <strong>Guarded</strong>
+            </div>
+            <div class="badge-card">
+              <p>Active models</p>
+              <strong>4</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="console-grid">
+          <div class="console-card">
+            <p>Total observations</p>
+            <h3>8</h3>
+            <span>Captured decisions analyzed (last 7 days)</span>
+          </div>
+          <div class="console-card highlight">
+            <p>Critical alerts</p>
+            <h3>2</h3>
+            <span>Events with risk score ≥ 0.80</span>
+          </div>
+          <div class="console-card">
+            <p>Average risk score</p>
+            <h3>0.46</h3>
+            <span>Mean risk across captured events</span>
+          </div>
+          <div class="console-card">
+            <p>Events today</p>
+            <h3>0</h3>
+            <span>Decisions observed today (local time)</span>
+          </div>
+        </section>
+
+        <section class="console-split">
+          <div class="console-card large">
+            <div class="card-header">
+              <h3>Risk score trend</h3>
+              <span class="chip">7d</span>
+            </div>
+            <div class="chart-placeholder">
+              <svg class="chart-svg" viewBox="0 0 480 200" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="riskLine" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0%" stop-color="#6366f1" />
+                    <stop offset="100%" stop-color="#8b5cf6" />
+                  </linearGradient>
+                </defs>
+                <polyline
+                  fill="none"
+                  stroke="url(#riskLine)"
+                  stroke-width="3"
+                  points="0,160 60,120 120,140 180,80 240,110 300,60 360,90 420,40 480,70"
+                />
+                <polyline
+                  fill="rgba(99, 102, 241, 0.12)"
+                  stroke="none"
+                  points="0,200 0,160 60,120 120,140 180,80 240,110 300,60 360,90 420,40 480,70 480,200"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="console-card large">
+            <div class="card-header">
+              <h3>Top risk signals</h3>
+              <span class="chip">live</span>
+            </div>
+            <ul class="signal-list">
+              <li><span class="signal-dot"></span>harmful_instructions <strong>2</strong></li>
+              <li><span class="signal-dot"></span>unsafe_output <strong>2</strong></li>
+              <li><span class="signal-dot"></span>violence <strong>1</strong></li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="theme.js"></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentinelAI Console • Baselines</title>
+    <script>
+      const savedTheme = localStorage.getItem("sentinel-theme");
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="console-body">
+    <div class="page-grid"></div>
+    <div class="wave-band"></div>
+    <div class="aurora"></div>
+    <div class="orb-field"></div>
+
+    <header class="console-header">
+      <a class="console-brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <div>
+          <p class="brand-name">SentinelAI</p>
+          <p class="brand-tagline">Safety Console</p>
+        </div>
+      </a>
+      <nav class="console-topnav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="logs.html">Risk Logs</a>
+        <a class="active" href="baselines.html">Baselines</a>
+        <a href="settings.html">Settings</a>
+        <a href="api-keys.html">API Keys</a>
+      </nav>
+      <div class="console-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          🌙
+        </button>
+        <button class="ghost">Review baselines</button>
+        <button class="primary">Add baseline</button>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-title">Safety Console</div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="analyze.html">Analyze</a>
+        <a href="logs.html">Risk Logs</a>
+        <a class="active" href="baselines.html">Baselines</a>
+        <a href="settings.html">Settings</a>
+        <a href="api-keys.html">API Keys</a>
+      </aside>
+
+      <main class="console-main">
+        <section class="console-hero compact">
+          <div>
+            <h1>Risk Baselines</h1>
+            <p>Configure the brain of your AI safety system.</p>
+          </div>
+          <div class="hero-status">Defaults ready</div>
+        </section>
+
+        <section class="console-grid">
+          <div class="console-card">
+            <p>Active baselines</p>
+            <h3>1</h3>
+            <span>Primary baseline applied</span>
+          </div>
+          <div class="console-card">
+            <p>Total baselines</p>
+            <h3>1</h3>
+            <span>Stored in workspace</span>
+          </div>
+          <div class="console-card">
+            <p>Avg threshold</p>
+            <h3>—</h3>
+            <span>Awaiting calibration</span>
+          </div>
+          <div class="console-card">
+            <p>Defaults</p>
+            <h3>Ready</h3>
+            <span>Preset guardrails enabled</span>
+          </div>
+        </section>
+
+        <section class="console-card wide">
+          <div class="card-header">
+            <h3>Baseline prompts</h3>
+            <span class="chip">active</span>
+          </div>
+          <div class="baseline-row">
+            <div>
+              <strong>You are a customer support answering bot?</strong>
+              <p>Active · last updated 02/05/2026</p>
+            </div>
+            <div class="row-actions">
+              <button class="ghost">Edit</button>
+              <button class="ghost">Disable</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="theme.js"></script>
+  </body>
+</html>

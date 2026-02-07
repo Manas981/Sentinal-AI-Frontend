@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentinelAI Console • API Keys</title>
+    <script>
+      const savedTheme = localStorage.getItem("sentinel-theme");
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="console-body">
+    <div class="page-grid"></div>
+    <div class="wave-band"></div>
+    <div class="aurora"></div>
+    <div class="orb-field"></div>
+
+    <header class="console-header">
+      <a class="console-brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <div>
+          <p class="brand-name">SentinelAI</p>
+          <p class="brand-tagline">Safety Console</p>
+        </div>
+      </a>
+      <nav class="console-topnav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="logs.html">Risk Logs</a>
+        <a href="baselines.html">Baselines</a>
+        <a href="settings.html">Settings</a>
+        <a class="active" href="api-keys.html">API Keys</a>
+      </nav>
+      <div class="console-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          🌙
+        </button>
+        <button class="ghost">Refresh</button>
+        <button class="primary">Generate key</button>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-title">Safety Console</div>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="analyze.html">Analyze</a>
+        <a href="logs.html">Risk Logs</a>
+        <a href="baselines.html">Baselines</a>
+        <a href="settings.html">Settings</a>
+        <a class="active" href="api-keys.html">API Keys</a>
+      </aside>
+
+      <main class="console-main">
+        <section class="console-hero compact">
+          <div>
+            <h1>API Keys</h1>
+            <p>Generate and revoke SDK keys. Keep keys secret and store them in environment variables.</p>
+          </div>
+          <div class="hero-status">Active keys: 4</div>
+        </section>
+
+        <section class="console-card wide">
+          <div class="card-header">
+            <h3>Create a key</h3>
+            <span class="chip">production</span>
+          </div>
+          <div class="filter-grid">
+            <div class="input-pill">Key name (e.g. production-chatbot)</div>
+            <button class="primary">Generate key</button>
+          </div>
+        </section>
+
+        <section class="console-card wide">
+          <div class="card-header">
+            <h3>Your keys</h3>
+            <span class="chip">4 active</span>
+          </div>
+          <div class="log-table">
+            <div class="log-row key-row">
+              <strong>chatbot-key</strong>
+              <span>sk_sentinel_</span>
+              <span class="status-pill success">Active</span>
+              <span>06/02/2026</span>
+              <button class="ghost">Revoke</button>
+            </div>
+            <div class="log-row key-row">
+              <strong>voice-chatbot</strong>
+              <span>sk_sentinel_</span>
+              <span class="status-pill success">Active</span>
+              <span>06/02/2026</span>
+              <button class="ghost">Revoke</button>
+            </div>
+            <div class="log-row key-row">
+              <strong>customer-support-bot</strong>
+              <span>sk_sentinel_</span>
+              <span class="status-pill warn">Revoked</span>
+              <span>05/02/2026</span>
+              <button class="ghost">Revoke</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="theme.js"></script>
+  </body>
+</html>

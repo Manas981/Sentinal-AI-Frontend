@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentinelAI Console • Analyze</title>
+    <script>
+      const savedTheme = localStorage.getItem("sentinel-theme");
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="console-body">
+    <div class="page-grid"></div>
+    <div class="wave-band"></div>
+    <div class="aurora"></div>
+    <div class="orb-field"></div>
+
+    <header class="console-header">
+      <a class="console-brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <div>
+          <p class="brand-name">SentinelAI</p>
+          <p class="brand-tagline">Safety Console</p>
+        </div>
+      </a>
+      <nav class="console-topnav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="logs.html">Risk Logs</a>
+        <a href="baselines.html">Baselines</a>
+        <a href="settings.html">Settings</a>
+        <a href="api-keys.html">API Keys</a>
+      </nav>
+      <div class="console-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+          🌙
+        </button>
+        <button class="ghost">View API docs</button>
+        <button class="primary">Run analysis</button>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-title">Safety Console</div>
+        <a href="dashboard.html">Dashboard</a>
+        <a class="active" href="analyze.html">Analyze</a>
+        <a href="logs.html">Risk Logs</a>
+        <a href="baselines.html">Baselines</a>
+        <a href="settings.html">Settings</a>
+        <a href="api-keys.html">API Keys</a>
+      </aside>
+
+      <main class="console-main">
+        <section class="console-hero compact">
+          <div>
+            <h1>Analyze</h1>
+            <p>Submit a prompt and model response to SentinelAI and view the risk assessment.</p>
+          </div>
+          <div class="hero-status">/api/analyze</div>
+        </section>
+
+        <section class="console-grid two-column">
+          <div class="console-card large">
+            <div class="card-header">
+              <h3>Prompt</h3>
+              <span class="chip">required</span>
+            </div>
+            <textarea class="input-field" placeholder="Paste the user prompt here"></textarea>
+          </div>
+          <div class="console-card large">
+            <div class="card-header">
+              <h3>Response</h3>
+              <span class="chip">required</span>
+            </div>
+            <textarea class="input-field" placeholder="Paste the model response here"></textarea>
+          </div>
+        </section>
+
+        <section class="console-card wide">
+          <div class="card-header">
+            <h3>Signal summary</h3>
+            <span class="chip">preview</span>
+          </div>
+          <div class="signal-grid">
+            <div>
+              <p>Prompt anomaly</p>
+              <strong>0.71</strong>
+            </div>
+            <div>
+              <p>Jailbreak attempt</p>
+              <strong>0.78</strong>
+            </div>
+            <div>
+              <p>Unsafe output</p>
+              <strong>0.85</strong>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="theme.js"></script>
+  </body>
+</html>
