@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SentinelAI • AI Risk Monitoring</title>
+    <script>
+      const savedTheme = localStorage.getItem("sentinel-theme");
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    </script>
+    <meta
+      name="description"
+      content="SentinelAI is a lightweight AI risk monitoring system for engineering teams. Detect anomalies, flag risky outputs, and aggregate signals before production incidents happen."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-grid"></div>
+    <div class="wave-band"></div>
+    <div class="aurora"></div>
+    <div class="orb-field"></div>
+    <header class="site-header">
+      <nav class="nav">
+        <div class="brand">
+          <span class="brand-mark">S</span>
+          <div>
+            <p class="brand-name">SentinelAI</p>
+            <p class="brand-tagline">AI Safety Console</p>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#how">How it works</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#preview">Product preview</a>
+          <a href="#why">Why SentinelAI</a>
+        </div>
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+            🌙
+          </button>
+          <a class="ghost button-like" href="logs.html">View risk logs</a>
+          <a class="primary button-like" href="dashboard.html">Open console</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="pill">Production risk detected</span>
+          <h1>
+            AI systems fail silently.<br />
+            <span class="gradient-text">We surface risk before it ships.</span>
+          </h1>
+          <p>
+            SentinelAI is the observability and safety layer for LLM-powered systems. Track prompt
+            shifts, flag unsafe outputs, and explain every decision with a unified risk score.
+          </p>
+          <div class="hero-actions">
+            <a class="primary button-like" href="dashboard.html">Enter Command Center</a>
+            <a class="ghost button-like" href="#how">See how it works</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-icon">◎</span>
+              <div>
+                <p>Real-time monitoring</p>
+                <span>Continuous AI observation</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">↗</span>
+              <div>
+                <p>Risk intelligence</p>
+                <span>Explainable threat signals</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">✓</span>
+              <div>
+                <p>Audit ready</p>
+                <span>Compliance friendly logs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-header">
+            <div>
+              <p>Investigation snapshot</p>
+              <span>One decision, fully traceable.</span>
+            </div>
+            <span class="risk-pill">risk 0.82</span>
+          </div>
+          <div class="panel-grid">
+            <div class="panel-card">
+              <p>Decision</p>
+              <strong class="danger">block</strong>
+            </div>
+            <div class="panel-card">
+              <p>Confidence</p>
+              <strong>93%</strong>
+            </div>
+            <div class="panel-card">
+              <p>Signals</p>
+              <strong>3</strong>
+            </div>
+          </div>
+          <div class="panel-card full">
+            <p>Primary reason</p>
+            <strong>Detected high-risk content patterns and policy violations.</strong>
+            <span>Action taken to prevent unsafe response.</span>
+          </div>
+          <div class="panel-grid">
+            <div class="panel-card">
+              <p>Prompt</p>
+              <div class="skeleton"></div>
+              <div class="skeleton short"></div>
+            </div>
+            <div class="panel-card">
+              <p>Response</p>
+              <div class="skeleton"></div>
+              <div class="skeleton short"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="section section-center reveal">
+        <h2>How it works</h2>
+        <p class="section-subtitle">Three steps to AI safety and observability.</p>
+        <div class="flow">
+          <div class="flow-card flow-input">
+            <span class="flow-icon">➜</span>
+            <h3>Input</h3>
+            <p>Prompt and response events stream from your product.</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card flow-detection">
+            <span class="flow-icon">◈</span>
+            <h3>Detection</h3>
+            <p>Detectors analyze shifts, heuristics, and policy signals.</p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-card flow-insight">
+            <span class="flow-icon">▣</span>
+            <h3>Insight</h3>
+            <p>Aggregator scores risk and logs rationale for teams.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="capabilities" class="section reveal">
+        <div class="section-header">
+          <h2>Core capabilities</h2>
+          <p>Built for engineering teams that need clarity, not hype.</p>
+        </div>
+        <div class="grid-2">
+          <div class="feature-card">
+            <h3>Risk scoring & decisions</h3>
+            <p>Consistent risk scores with clear actions (allow / warn / escalate / block).</p>
+          </div>
+          <div class="feature-card">
+            <h3>Investigation-ready logs</h3>
+            <p>Every event becomes a report with signals, confidence, and rationale.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Triage and filtering</h3>
+            <p>Find what matters by risk, decision, flags, time, and model.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Trends and baselines</h3>
+            <p>Monitor drift over time and compare against defined baselines.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="preview" class="section reveal">
+        <div class="section-header">
+          <h2>Product preview</h2>
+          <p>A safety console built for investigation workflows.</p>
+        </div>
+        <div class="preview-grid">
+          <div class="preview-card">
+            <div class="preview-header">
+              <h3>Dashboard</h3>
+              <span class="badge">overview</span>
+            </div>
+            <p class="preview-sub">Answer: “Is my AI system safe right now?”</p>
+            <div class="metric-grid">
+              <div>
+                <p>Critical alerts</p>
+                <strong>2</strong>
+              </div>
+              <div>
+                <p>Avg risk</p>
+                <strong>0.46</strong>
+              </div>
+            </div>
+            <div class="preview-chart">
+              <svg class="preview-svg" viewBox="0 0 360 120" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="previewLine" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0%" stop-color="#6366f1" />
+                    <stop offset="100%" stop-color="#8b5cf6" />
+                  </linearGradient>
+                </defs>
+                <polyline
+                  fill="none"
+                  stroke="url(#previewLine)"
+                  stroke-width="3"
+                  points="0,90 45,70 90,78 135,50 180,65 225,40 270,55 315,30 360,45"
+                />
+                <polyline
+                  fill="rgba(99, 102, 241, 0.15)"
+                  stroke="none"
+                  points="0,120 0,90 45,70 90,78 135,50 180,65 225,40 270,55 315,30 360,45 360,120"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="preview-card">
+            <div class="preview-header">
+              <h3>Risk Logs</h3>
+              <span class="badge">logs</span>
+            </div>
+            <div class="log-list">
+              <div class="log-item">
+                <span class="dot danger"></span>
+                <div>
+                  <strong>block</strong>
+                  <p>2 min ago</p>
+                </div>
+                <span class="score">0.82</span>
+              </div>
+              <div class="log-item">
+                <span class="dot warn"></span>
+                <div>
+                  <strong>warn</strong>
+                  <p>5 min ago</p>
+                </div>
+                <span class="score">0.45</span>
+              </div>
+              <div class="log-item">
+                <span class="dot ok"></span>
+                <div>
+                  <strong>allow</strong>
+                  <p>8 min ago</p>
+                </div>
+                <span class="score">0.12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" class="section section-center reveal">
+        <h2>Why SentinelAI</h2>
+        <p class="section-subtitle">
+          Trust comes from evidence: what happened, what signals were detected, and why an action was
+          taken.
+        </p>
+        <div class="grid-3">
+          <div class="value-card">
+            <h3>Explainability by default</h3>
+            <p>Pair decisions with plain-language rationale so teams can validate outcomes.</p>
+          </div>
+          <div class="value-card">
+            <h3>Audit-ready exports</h3>
+            <p>Export structured JSON events for incident reviews and compliance workflows.</p>
+          </div>
+          <div class="value-card">
+            <h3>Production workflow first</h3>
+            <p>Built for triage, filters, investigations, and prioritized action lists.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta reveal">
+        <div>
+          <h2>Ship safer AI, faster.</h2>
+          <p>
+            Plug SentinelAI into your pipeline with a single /api/analyze endpoint and start
+            monitoring risk in minutes.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <button class="primary">Book a demo</button>
+          <button class="ghost">Read API docs</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <p class="brand-name">SentinelAI</p>
+        <span>Observability and safety for LLM-powered systems.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#">Docs</a>
+        <a href="#">Security</a>
+        <a href="#">Status</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+  </body>
+</html>
